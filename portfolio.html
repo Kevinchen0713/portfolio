@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Project Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg:       #f7f6f3;
+  --white:    #ffffff;
+  --border:   #e4e1da;
+  --border2:  #d0ccc3;
+  --text:     #1c1b19;
+  --muted:    #7a7670;
+  --dim:      #4e4b47;
+  --accent:   #2e6fea;
+  --accent-bg:#edf2fd;
+  --tag-bg:   #f0ede7;
+  --tag-text: #5a5650;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 300;
+  font-size: 14.5px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ── LAYOUT ── */
+.shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+aside {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--white);
+  border-right: 1px solid var(--border);
+  padding: 40px 26px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 3px;
+}
+
+.sidebar-role {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+
+.nav-group { margin-bottom: 26px; }
+
+.nav-group-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.nav-group a {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 4px 0 4px 10px;
+  margin-left: -10px;
+  border-left: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+  line-height: 1.4;
+}
+
+.nav-group a:hover {
+  color: var(--accent);
+  border-left-color: var(--accent);
+}
+
+/* ── MAIN ── */
+main {
+  padding: 56px 64px 100px;
+  max-width: 860px;
+}
+
+/* ── INTRO ── */
+.page-intro {
+  margin-bottom: 64px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-intro h1 {
+  font-family: 'Lora', serif;
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+.page-intro h1 em {
+  color: var(--accent);
+  font-style: italic;
+}
+
+.page-intro p {
+  color: var(--dim);
+  font-size: 15px;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* ── SECTION ── */
+.section { margin-bottom: 72px; }
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.section-label h2 {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── ENTRY ── */
+.entry {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 0 32px;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.entry:first-of-type { border-top: 1px solid var(--border); }
+
+.entry-meta { padding-top: 2px; }
+
+.entry-date {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.entry-tags { display: flex; flex-direction: column; gap: 4px; }
+
+.etag {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  background: var(--accent-bg);
+  border: 1px solid #c8d9f9;
+  padding: 2px 8px;
+  display: inline-block;
+  width: fit-content;
+  border-radius: 3px;
+}
+
+.entry-body h3 {
+  font-family: 'Lora', serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 9px;
+  line-height: 1.25;
+}
+
+.entry-body p {
+  color: var(--dim);
+  font-size: 14px;
+  line-height: 1.72;
+  margin-bottom: 16px;
+}
+
+/* ── TECH ROWS ── */
+.tech-details { margin-bottom: 16px; }
+
+.tech-row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.tech-row:last-child { border-bottom: none; }
+
+.tech-key {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  min-width: 130px;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+}
+
+.tech-val {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--text);
+}
+
+/* ── OUTCOMES ── */
+.outcomes {
+  border-left: 2px solid var(--accent);
+  padding: 14px 18px;
+  margin: 14px 0 16px;
+  background: var(--accent-bg);
+  border-radius: 0 4px 4px 0;
+}
+
+.outcomes-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.o-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  color: var(--dim);
+}
+
+.o-row:last-child { margin-bottom: 0; }
+
+.o-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+  align-self: center;
+}
+
+/* ── SKILL TAGS ── */
+.skill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.stag {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--tag-text);
+  background: var(--tag-bg);
+  border: 1px solid var(--border2);
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+/* ── COMPACT ── */
+.compact-entry {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.compact-entry:first-of-type { border-top: 1px solid var(--border); }
+
+.compact-entry h3 {
+  font-family: 'Lora', serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 7px;
+  letter-spacing: -0.01em;
+}
+
+.compact-entry p {
+  font-size: 13.5px;
+  color: var(--dim);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 780px) {
+  .shell { grid-template-columns: 1fr; }
+  aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px; }
+  main { padding: 32px 24px 80px; }
+  .entry { grid-template-columns: 1fr; gap: 10px; }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.entry, .compact-entry { animation: rise 0.35s ease both; }
+</style>
+</head>
+<body>
+<div class="shell">
+
+<!-- SIDEBAR -->
+<aside>
+  <div class="sidebar-name">Your Name</div>
+  <div class="sidebar-role">IT Project Coordination</div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Email &amp; Collab</div>
+    <a href="#exchange">Exchange / M365 Migration</a>
+    <a href="#proofpoint">Proofpoint Implementation</a>
+    <a href="#outlook-mobile">Outlook Mobile Rollout</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Endpoint &amp; Device</div>
+    <a href="#intune">Intune / MDM Rollout</a>
+    <a href="#win11">Windows 11 Rollout</a>
+    <a href="#powerpdf">PowerPDF Evaluation</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Identity &amp; Security</div>
+    <a href="#identity">Auth / Identity Modernization</a>
+    <a href="#security">Cloud Security Hardening</a>
+    <a href="#svcacct">Service Account Improvements</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Cloud &amp; Platform</div>
+    <a href="#azure">Azure Landing Zone</a>
+    <a href="#imanage">iManage SaaS Migration</a>
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-label">Other</div>
+    <a href="#rfid">Hospital RFID</a>
+    <a href="#process">Process Improvement</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main>
+
+  <div class="page-intro">
+    <h1>Project<br/><em>Portfolio</em></h1>
+    <p>Technical project coordination across enterprise IT, cloud infrastructure, security, and healthcare technology. Focused on keeping cross-functional work organized, tracked, and moving — from pilot to production.</p>
+  </div>
+
+  <!-- EMAIL & COLLAB -->
+  <div class="section">
+    <div class="section-label"><h2>Email &amp; Collaboration Infrastructure</h2></div>
+
+    <div class="entry" id="exchange">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">M365</span>
+          <span class="etag">Exchange Online</span>
+          <span class="etag">Hybrid</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Exchange Online &amp; M365 Migration</h3>
+        <p>Coordinated hybrid migration planning and readiness tracking across IT and vendor teams. Kept tabs on the technical details that tend to fall through the cracks — GUID sync issues, MRS Proxy configuration, HCW readiness, and licensing alignment for pilot users before broader rollout.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Migration approach</span><span class="tech-val">Hybrid, staged rollout with pilot cohorts</span></div>
+          <div class="tech-row"><span class="tech-key">Key dependencies</span><span class="tech-val">GUID sync, MRS Proxy / HCW configuration, license assignment</span></div>
+          <div class="tech-row"><span class="tech-key">Coordination scope</span><span class="tech-val">Engineering teams, Microsoft, licensing vendor</span></div>
+          <div class="tech-row"><span class="tech-key">Tracked items</span><span class="tech-val">Mailbox readiness, pilot blockers, cutover readiness criteria</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Exchange Online</span><span class="stag">Hybrid Migration</span><span class="stag">HCW</span><span class="stag">MRS Proxy</span><span class="stag">GUID Sync</span><span class="stag">Licensing</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" id="proofpoint">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Proofpoint</span>
+          <span class="etag">Email Security</span>
+          <span class="etag">DLP</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Proofpoint Email Security &amp; DLP Implementation</h3>
+        <p>Supported the full rollout of Proofpoint as the firm's email security and DLP platform, replacing IronPort. Tracked policy migration work, mail flow planning, and open implementation items across the security and messaging teams. The IronPort-to-Proofpoint policy translation alone generated a significant backlog that needed structured tracking to get done cleanly.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Platform replaced</span><span class="tech-val">IronPort → Proofpoint</span></div>
+          <div class="tech-row"><span class="tech-key">Scope</span><span class="tech-val">Email hygiene, continuity, DLP policy migration, mail flow</span></div>
+          <div class="tech-row"><span class="tech-key">Coordination</span><span class="tech-val">Security team, messaging team, Proofpoint vendor</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Proofpoint</span><span class="stag">IronPort</span><span class="stag">DLP Policy</span><span class="stag">Mail Flow</span><span class="stag">Email Hygiene</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" id="outlook-mobile">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Outlook Mobile</span>
+          <span class="etag">HMA</span>
+          <span class="etag">Cond. Access</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Outlook Mobile App Rollout</h3>
+        <p>Coordinated rollout planning for Outlook Mobile in a hybrid environment with Conditional Access and managed-device requirements. Worked with the identity and mobility teams to align on HMA configuration, tester coordination, and user communication — including QR code-based enrollment guides and help desk prep.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Auth dependency</span><span class="tech-val">Hybrid Modern Authentication (HMA)</span></div>
+          <div class="tech-row"><span class="tech-key">Access controls</span><span class="tech-val">Conditional Access, managed-device policy enforcement</span></div>
+          <div class="tech-row"><span class="tech-key">Rollout support</span><span class="tech-val">Tester coordination, QRC enrollment guides, support planning</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Outlook Mobile</span><span class="stag">HMA</span><span class="stag">Conditional Access</span><span class="stag">Intune</span><span class="stag">MDM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENDPOINT & DEVICE -->
+  <div class="section">
+    <div class="section-label"><h2>Endpoint &amp; Device Management</h2></div>
+
+    <div class="entry" id="intune">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Intune</span>
+          <span class="etag">MDM</span>
+          <span class="etag">MobileIron</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Intune MDM Rollout &amp; MobileIron Transition</h3>
+        <p>Assisted with planning and early-stage execution of the firm's Intune MDM rollout, transitioning away from MobileIron. Ran pilot user coordination, helped shape the enrollment experience and support workflows, and tracked open items throughout. Also supported training materials for help desk staff handling enrollment calls.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Platform transition</span><span class="tech-val">MobileIron → Microsoft Intune</span></div>
+          <div class="tech-row"><span class="tech-key">Coverage</span><span class="tech-val">Mobile enrollment, pilot users, support workflows, training</span></div>
+          <div class="tech-row"><span class="tech-key">Coordination</span><span class="tech-val">Mobility team, help desk, pilot user groups</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Microsoft Intune</span><span class="stag">MobileIron</span><span class="stag">MDM Enrollment</span><span class="stag">Pilot Coordination</span><span class="stag">Help Desk Enablement</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" id="win11">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Windows 11</span>
+          <span class="etag">Deployment</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Windows 11 Rollout</h3>
+        <p>Supported Windows 11 deployment across the firm, covering both the IPU upgrade path and 25H2 planning. Ran weekly crash report meetings to triage post-upgrade issues, and maintained reporting broken down by office, department, and device type so teams could see where problems were concentrated and prioritize remediation.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Upgrade approach</span><span class="tech-val">In-Place Upgrade (IPU), 25H2 deployment planning</span></div>
+          <div class="tech-row"><span class="tech-key">Ongoing cadence</span><span class="tech-val">Crash report review meetings, issue triage, status tracking</span></div>
+          <div class="tech-row"><span class="tech-key">Reporting cuts</span><span class="tech-val">By office, department, and device type</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Windows 11</span><span class="stag">IPU</span><span class="stag">25H2</span><span class="stag">Deployment Reporting</span><span class="stag">Crash Triage</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="compact-entry" id="powerpdf">
+      <h3>PowerPDF Evaluation</h3>
+      <p>Ran a structured evaluation comparing Nuance PowerPDF against Adobe Acrobat for firm-wide use. Gathered requirements from stakeholder groups, coordinated testing, and compiled findings to support the purchasing decision.</p>
+      <div class="skill-row">
+        <span class="stag">PowerPDF</span><span class="stag">Adobe Acrobat</span><span class="stag">Vendor Evaluation</span><span class="stag">Requirements Gathering</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- IDENTITY & SECURITY -->
+  <div class="section">
+    <div class="section-label"><h2>Identity &amp; Security</h2></div>
+
+    <div class="entry" id="identity">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Identity</span>
+          <span class="etag">Passwordless</span>
+          <span class="etag">Entra ID</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Authentication &amp; Identity Modernization</h3>
+        <p>Supported the firm's shift toward modern authentication, including the Microsoft Authenticator rollout direction and early passwordless planning. Helped build an intake process for authentication change requests — making sure new asks got properly evaluated and tracked rather than landing in an engineering queue with no context.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Initiatives</span><span class="tech-val">Microsoft Authenticator rollout, passwordless direction</span></div>
+          <div class="tech-row"><span class="tech-key">Process built</span><span class="tech-val">Intake and triage process for authentication change requests</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Microsoft Authenticator</span><span class="stag">Passwordless</span><span class="stag">Entra ID</span><span class="stag">Change Intake</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry" id="security">
+      <div class="entry-meta">
+        <div class="entry-date">Ongoing</div>
+        <div class="entry-tags">
+          <span class="etag">Security Posture</span>
+          <span class="etag">PIM</span>
+          <span class="etag">Cond. Access</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Cloud Security Hardening &amp; M365 / Azure Posture</h3>
+        <p>Supported tenant-level security remediation work, tracking controls, owners, and remediation status across the security team. Covered both M365 Secure Score improvements and broader Azure hardening — PIM configuration, Conditional Access policy tightening, and role hardening to reduce standing privileged access.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Remediation tracking</span><span class="tech-val">Controls inventory, ownership assignment, status reporting</span></div>
+          <div class="tech-row"><span class="tech-key">Technical scope</span><span class="tech-val">Secure Score improvements, PIM, Conditional Access, role hardening</span></div>
+          <div class="tech-row"><span class="tech-key">Environment</span><span class="tech-val">Microsoft 365 tenant + Azure landing zone</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Secure Score</span><span class="stag">PIM</span><span class="stag">Conditional Access</span><span class="stag">Role Hardening</span><span class="stag">Tenant Security</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="compact-entry" id="svcacct">
+      <h3>Service Account &amp; gMSA Improvement Efforts</h3>
+      <p>Helped document and track the firm's transition from manual service accounts to group Managed Service Accounts (gMSA). Tracked application owners, documented transition steps per service, and surfaced blockers to the engineering team to keep the effort moving.</p>
+      <div class="skill-row">
+        <span class="stag">gMSA</span><span class="stag">Service Accounts</span><span class="stag">Active Directory</span><span class="stag">Documentation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOUD & PLATFORM -->
+  <div class="section">
+    <div class="section-label"><h2>Cloud &amp; Platform</h2></div>
+
+    <div class="compact-entry" id="azure">
+      <h3>Azure Landing Zone / Cloud Platform Efforts</h3>
+      <p>Supported coordination around the firm's Azure landing zone buildout — tracking dependencies and open items across the cloud platform team, and keeping governance, policy, and workload migration discussions organized as the environment expanded.</p>
+      <div class="skill-row">
+        <span class="stag">Azure</span><span class="stag">Landing Zone</span><span class="stag">Cloud Governance</span><span class="stag">Platform Coordination</span>
+      </div>
+    </div>
+
+    <div class="compact-entry" id="imanage">
+      <h3>iManage SaaS Migration (DMS → Cloud)</h3>
+      <p>Assisted with coordination for the firm's migration of iManage from on-premises to the SaaS platform. Tracked readiness items, migration dependencies, and stakeholder sign-offs across legal, IT, and the iManage vendor team.</p>
+      <div class="skill-row">
+        <span class="stag">iManage</span><span class="stag">DMS Migration</span><span class="stag">SaaS Transition</span><span class="stag">Legal Tech</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTHCARE -->
+  <div class="section">
+    <div class="section-label"><h2>Healthcare Technology</h2></div>
+
+    <div class="entry" id="rfid">
+      <div class="entry-meta">
+        <div class="entry-date">Aug 2022 –<br/>Present</div>
+        <div class="entry-tags">
+          <span class="etag">RFID</span>
+          <span class="etag">Healthcare IT</span>
+          <span class="etag">Asset Mgmt</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Hospital RFID Security &amp; Asset Protection System</h3>
+        <p>Spearheaded implementation of an RFID-based asset tracking system in a hospital setting, addressing chronic equipment loss and limited visibility into high-value medical device locations. Led the project from needs assessment through vendor selection, integration planning, compliance review, and staff training.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Needs assessment</span><span class="tech-val">Mapped equipment loss patterns and workflow gaps across departments</span></div>
+          <div class="tech-row"><span class="tech-key">Vendor selection</span><span class="tech-val">Evaluated and selected RFID platform with clinical and IT stakeholders</span></div>
+          <div class="tech-row"><span class="tech-key">Integration</span><span class="tech-val">Planned connection to existing equipment management workflows</span></div>
+          <div class="tech-row"><span class="tech-key">Risk &amp; compliance</span><span class="tech-val">Tested against existing infrastructure; ensured healthcare regulatory compliance</span></div>
+          <div class="tech-row"><span class="tech-key">Training</span><span class="tech-val">Ran adoption sessions across hospital departments</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">RFID</span><span class="stag">Asset Tracking</span><span class="stag">Vendor Selection</span><span class="stag">Healthcare Compliance</span><span class="stag">Change Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS IMPROVEMENT -->
+  <div class="section">
+    <div class="section-label"><h2>Process Improvement &amp; Automation</h2></div>
+
+    <div class="entry" id="process">
+      <div class="entry-meta">
+        <div class="entry-date">Aug 2021 –<br/>May 2022</div>
+        <div class="entry-tags">
+          <span class="etag">Process Improvement</span>
+          <span class="etag">Stony Brook</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Central Mailing Services — Process Improvement</h3>
+        <p>Led a process improvement initiative for Stony Brook University's Central Mailing Services. Started with data analysis and process mapping, then proposed and implemented changes covering route optimization, equipment usage, marketing spend, and a shift to digital record-keeping.</p>
+        <div class="outcomes">
+          <div class="outcomes-title">Results</div>
+          <div class="o-row"><span class="o-dot"></span>Significant reduction in mailing costs through optimized equipment use and revised marketing spend</div>
+          <div class="o-row"><span class="o-dot"></span>Faster mailing processing time after route and workflow changes</div>
+          <div class="o-row"><span class="o-dot"></span>Full digitization of mailing records, reducing paper waste and improving data accessibility</div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Process Mapping</span><span class="stag">Data Analysis</span><span class="stag">Cost Reduction</span><span class="stag">KPIs</span><span class="stag">Digital Records</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-meta">
+        <div class="entry-date">Aug 2021 –<br/>May 2022</div>
+        <div class="entry-tags">
+          <span class="etag">Automation</span>
+          <span class="etag">Higher Ed</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Departmental Advising Semi-Automation — Stony Brook University</h3>
+        <p>Led a project to reduce manual overhead in academic advising. Interviewed students and advisors to understand pain points, designed a semi-automated scheduling and course planning platform, and built an Excel-based tool that automatically cross-referenced student progress against degree requirements — the part advisors found most tedious.</p>
+        <div class="outcomes">
+          <div class="outcomes-title">Results</div>
+          <div class="o-row"><span class="o-dot"></span>Meaningful reduction in appointment wait times, improving student access and advisor throughput</div>
+          <div class="o-row"><span class="o-dot"></span>Substantially less manual data entry per advisor through the automated tracking tool</div>
+          <div class="o-row"><span class="o-dot"></span>Positive feedback from both students and advisors on the new platform</div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Excel Automation</span><span class="stag">Stakeholder Research</span><span class="stag">UX Design</span><span class="stag">Testing &amp; QA</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+</div>
+</body>
+</html>
