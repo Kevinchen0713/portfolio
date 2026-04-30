@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Project Portfolio</title>
+<title>Kevin Chen — Project Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -33,14 +33,12 @@ body {
   min-height: 100vh;
 }
 
-/* ── LAYOUT ── */
 .shell {
   display: grid;
   grid-template-columns: 220px 1fr;
   min-height: 100vh;
 }
 
-/* ── SIDEBAR ── */
 aside {
   position: sticky;
   top: 0;
@@ -67,7 +65,19 @@ aside {
   color: var(--accent);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  margin-bottom: 36px;
+  margin-bottom: 6px;
+}
+
+.sidebar-contact {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.sidebar-contact a {
+  color: var(--accent);
+  text-decoration: none;
 }
 
 .nav-group { margin-bottom: 26px; }
@@ -99,13 +109,11 @@ aside {
   border-left-color: var(--accent);
 }
 
-/* ── MAIN ── */
 main {
   padding: 56px 64px 100px;
   max-width: 860px;
 }
 
-/* ── INTRO ── */
 .page-intro {
   margin-bottom: 64px;
   padding-bottom: 40px;
@@ -122,10 +130,7 @@ main {
   margin-bottom: 18px;
 }
 
-.page-intro h1 em {
-  color: var(--accent);
-  font-style: italic;
-}
+.page-intro h1 em { color: var(--accent); font-style: italic; }
 
 .page-intro p {
   color: var(--dim);
@@ -134,7 +139,6 @@ main {
   line-height: 1.7;
 }
 
-/* ── SECTION ── */
 .section { margin-bottom: 72px; }
 
 .section-label {
@@ -160,7 +164,6 @@ main {
   background: var(--border);
 }
 
-/* ── ENTRY ── */
 .entry {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -181,6 +184,20 @@ main {
   text-transform: uppercase;
   margin-bottom: 10px;
   line-height: 1.5;
+}
+
+.badge-complete {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #b7dfbf;
+  padding: 2px 7px;
+  border-radius: 3px;
+  margin-bottom: 8px;
 }
 
 .entry-tags { display: flex; flex-direction: column; gap: 4px; }
@@ -215,7 +232,6 @@ main {
   margin-bottom: 16px;
 }
 
-/* ── TECH ROWS ── */
 .tech-details { margin-bottom: 16px; }
 
 .tech-row {
@@ -243,7 +259,6 @@ main {
   color: var(--text);
 }
 
-/* ── OUTCOMES ── */
 .outcomes {
   border-left: 2px solid var(--accent);
   padding: 14px 18px;
@@ -282,7 +297,6 @@ main {
   align-self: center;
 }
 
-/* ── SKILL TAGS ── */
 .skill-row {
   display: flex;
   flex-wrap: wrap;
@@ -301,7 +315,6 @@ main {
   letter-spacing: 0.02em;
 }
 
-/* ── COMPACT ── */
 .compact-entry {
   padding: 20px 0;
   border-bottom: 1px solid var(--border);
@@ -325,7 +338,6 @@ main {
   margin-bottom: 10px;
 }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 780px) {
   .shell { grid-template-columns: 1fr; }
   aside { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px; }
@@ -343,10 +355,14 @@ main {
 <body>
 <div class="shell">
 
-<!-- SIDEBAR -->
 <aside>
-  <div class="sidebar-name">Your Name</div>
-  <div class="sidebar-role">IT Project Coordination</div>
+  <div class="sidebar-name">Kevin Chen</div>
+  <div class="sidebar-role">IT Project Coordinator</div>
+  <div class="sidebar-contact">
+    Little Neck, NY 11363<br/>
+    <a href="mailto:Kevinchen1818@gmail.com">Kevinchen1818@gmail.com</a><br/>
+    347-822-9892
+  </div>
 
   <div class="nav-group">
     <div class="nav-group-label">Email &amp; Collab</div>
@@ -382,12 +398,11 @@ main {
   </div>
 </aside>
 
-<!-- MAIN -->
 <main>
 
   <div class="page-intro">
-    <h1>Project<br/><em>Portfolio</em></h1>
-    <p>Technical project coordination across enterprise IT, cloud infrastructure, security, and healthcare technology. Focused on keeping cross-functional work organized, tracked, and moving — from pilot to production.</p>
+    <h1>Kevin Chen —<br/><em>Project Portfolio</em></h1>
+    <p>IT Project Coordinator at Davis Polk &amp; Wardwell LLP. Focused on keeping cross-functional technology work organized, tracked, and moving — from pilot through production. Background spanning enterprise IT, cloud infrastructure, healthcare, and process improvement.</p>
   </div>
 
   <!-- EMAIL & COLLAB -->
@@ -494,31 +509,51 @@ main {
 
     <div class="entry" id="win11">
       <div class="entry-meta">
-        <div class="entry-date">Ongoing</div>
+        <div class="entry-date">Apr 2025 –<br/>Oct 14, 2025</div>
         <div class="entry-tags">
+          <div class="badge-complete">✓ Completed</div>
           <span class="etag">Windows 11</span>
+          <span class="etag">23H2</span>
           <span class="etag">Deployment</span>
         </div>
       </div>
       <div class="entry-body">
-        <h3>Windows 11 Rollout</h3>
-        <p>Supported Windows 11 deployment across the firm, covering both the IPU upgrade path and 25H2 planning. Ran weekly crash report meetings to triage post-upgrade issues, and maintained reporting broken down by office, department, and device type so teams could see where problems were concentrated and prioritize remediation.</p>
+        <h3>Windows 11 23H2 Upgrade — Windows 10 Migration</h3>
+        <p>Drove the firm-wide upgrade from Windows 10 to Windows 11 23H2, completing the full rollout on October 14, 2025 — roughly six months from kick-off. The main thing I owned was creating the metrics and tracking infrastructure that made the project visible: an upgrade inventory and scheduling tracker that let the team see exactly where every device stood at any point and prioritize the remaining work without chasing down individual teams for status.</p>
         <div class="tech-details">
-          <div class="tech-row"><span class="tech-key">Upgrade approach</span><span class="tech-val">In-Place Upgrade (IPU), 25H2 deployment planning</span></div>
-          <div class="tech-row"><span class="tech-key">Ongoing cadence</span><span class="tech-val">Crash report review meetings, issue triage, status tracking</span></div>
-          <div class="tech-row"><span class="tech-key">Reporting cuts</span><span class="tech-val">By office, department, and device type</span></div>
+          <div class="tech-row"><span class="tech-key">Scope</span><span class="tech-val">Firm-wide Windows 10 → Windows 11 23H2 upgrade</span></div>
+          <div class="tech-row"><span class="tech-key">Timeline</span><span class="tech-val">April 6, 2025 – October 14, 2025</span></div>
+          <div class="tech-row"><span class="tech-key">Metrics built</span><span class="tech-val">Upgrade inventory tracker, device-level status reporting, schedule by office / department / device type</span></div>
+          <div class="tech-row"><span class="tech-key">Reporting cadence</span><span class="tech-val">Ongoing progress reporting to leadership; crash report meetings to triage post-upgrade issues</span></div>
+          <div class="tech-row"><span class="tech-key">Planning coverage</span><span class="tech-val">25H2 deployment planning also supported in parallel</span></div>
         </div>
         <div class="skill-row">
-          <span class="stag">Windows 11</span><span class="stag">IPU</span><span class="stag">25H2</span><span class="stag">Deployment Reporting</span><span class="stag">Crash Triage</span>
+          <span class="stag">Windows 11 23H2</span><span class="stag">Windows 10 Migration</span><span class="stag">Upgrade Inventory</span><span class="stag">Deployment Metrics</span><span class="stag">Scheduling</span><span class="stag">Status Reporting</span>
         </div>
       </div>
     </div>
 
-    <div class="compact-entry" id="powerpdf">
-      <h3>PowerPDF Evaluation</h3>
-      <p>Ran a structured evaluation comparing Nuance PowerPDF against Adobe Acrobat for firm-wide use. Gathered requirements from stakeholder groups, coordinated testing, and compiled findings to support the purchasing decision.</p>
-      <div class="skill-row">
-        <span class="stag">PowerPDF</span><span class="stag">Adobe Acrobat</span><span class="stag">Vendor Evaluation</span><span class="stag">Requirements Gathering</span>
+    <div class="entry" id="powerpdf">
+      <div class="entry-meta">
+        <div class="entry-date">Jan 2025 –<br/>Nov 29, 2025</div>
+        <div class="entry-tags">
+          <div class="badge-complete">✓ Completed</div>
+          <span class="etag">PowerPDF</span>
+          <span class="etag">Cost Reduction</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Adobe DC → PowerPDF Migration</h3>
+        <p>Led a firm-wide project to move users off Adobe Acrobat DC to Nuance PowerPDF, primarily to reduce software licensing costs. Coordinated the evaluation, user migration, and rollout across the firm — completing the full transition on November 29, 2025 after roughly 10 months from kick-off.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Business driver</span><span class="tech-val">Reduce Adobe DC licensing costs firm-wide</span></div>
+          <div class="tech-row"><span class="tech-key">Platform replaced</span><span class="tech-val">Adobe Acrobat DC → Nuance PowerPDF</span></div>
+          <div class="tech-row"><span class="tech-key">Timeline</span><span class="tech-val">January 21, 2025 – November 29, 2025</span></div>
+          <div class="tech-row"><span class="tech-key">Coordination</span><span class="tech-val">Requirements gathering, stakeholder testing, user migration, rollout tracking</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">PowerPDF</span><span class="stag">Adobe Acrobat DC</span><span class="stag">Software Migration</span><span class="stag">Cost Reduction</span><span class="stag">Vendor Evaluation</span><span class="stag">Change Management</span>
+        </div>
       </div>
     </div>
   </div>
@@ -585,11 +620,27 @@ main {
   <div class="section">
     <div class="section-label"><h2>Cloud &amp; Platform</h2></div>
 
-    <div class="compact-entry" id="azure">
-      <h3>Azure Landing Zone / Cloud Platform Efforts</h3>
-      <p>Supported coordination around the firm's Azure landing zone buildout — tracking dependencies and open items across the cloud platform team, and keeping governance, policy, and workload migration discussions organized as the environment expanded.</p>
-      <div class="skill-row">
-        <span class="stag">Azure</span><span class="stag">Landing Zone</span><span class="stag">Cloud Governance</span><span class="stag">Platform Coordination</span>
+    <div class="entry" id="azure">
+      <div class="entry-meta">
+        <div class="entry-date">Sep 2025 –<br/>Feb 21, 2026</div>
+        <div class="entry-tags">
+          <div class="badge-complete">✓ Completed</div>
+          <span class="etag">Azure</span>
+          <span class="etag">Landing Zone</span>
+          <span class="etag">Cloud Platform</span>
+        </div>
+      </div>
+      <div class="entry-body">
+        <h3>Azure Landing Zone / Cloud Platform Buildout</h3>
+        <p>Supported coordination of the firm's Azure landing zone buildout from September 2025 through completion in February 2026. Tracked dependencies and open items across the cloud platform team, and kept governance, policy, and workload migration discussions organized as the environment expanded and more stakeholders came into scope.</p>
+        <div class="tech-details">
+          <div class="tech-row"><span class="tech-key">Timeline</span><span class="tech-val">September 10, 2025 – February 21, 2026</span></div>
+          <div class="tech-row"><span class="tech-key">Scope</span><span class="tech-val">Landing zone buildout, governance policies, workload migration planning</span></div>
+          <div class="tech-row"><span class="tech-key">Coordination</span><span class="tech-val">Cloud platform team, infrastructure engineering, stakeholder sign-offs</span></div>
+        </div>
+        <div class="skill-row">
+          <span class="stag">Azure</span><span class="stag">Landing Zone</span><span class="stag">Cloud Governance</span><span class="stag">Platform Coordination</span><span class="stag">Dependency Tracking</span>
+        </div>
       </div>
     </div>
 
@@ -608,7 +659,7 @@ main {
 
     <div class="entry" id="rfid">
       <div class="entry-meta">
-        <div class="entry-date">Aug 2022 –<br/>Present</div>
+        <div class="entry-date">Sep 2022 –<br/>Mar 2024</div>
         <div class="entry-tags">
           <span class="etag">RFID</span>
           <span class="etag">Healthcare IT</span>
@@ -617,7 +668,7 @@ main {
       </div>
       <div class="entry-body">
         <h3>Hospital RFID Security &amp; Asset Protection System</h3>
-        <p>Spearheaded implementation of an RFID-based asset tracking system in a hospital setting, addressing chronic equipment loss and limited visibility into high-value medical device locations. Led the project from needs assessment through vendor selection, integration planning, compliance review, and staff training.</p>
+        <p>Spearheaded implementation of an RFID-based asset tracking system at NYU Langone Health, addressing chronic equipment loss and limited visibility into high-value medical device locations. Led the project from needs assessment through vendor selection, integration planning, compliance review, and staff training.</p>
         <div class="tech-details">
           <div class="tech-row"><span class="tech-key">Needs assessment</span><span class="tech-val">Mapped equipment loss patterns and workflow gaps across departments</span></div>
           <div class="tech-row"><span class="tech-key">Vendor selection</span><span class="tech-val">Evaluated and selected RFID platform with clinical and IT stakeholders</span></div>
@@ -640,21 +691,21 @@ main {
       <div class="entry-meta">
         <div class="entry-date">Aug 2021 –<br/>May 2022</div>
         <div class="entry-tags">
-          <span class="etag">Process Improvement</span>
+          <span class="etag">Lean Six Sigma</span>
           <span class="etag">Stony Brook</span>
         </div>
       </div>
       <div class="entry-body">
         <h3>Central Mailing Services — Process Improvement</h3>
-        <p>Led a process improvement initiative for Stony Brook University's Central Mailing Services. Started with data analysis and process mapping, then proposed and implemented changes covering route optimization, equipment usage, marketing spend, and a shift to digital record-keeping.</p>
+        <p>Led a Lean process improvement initiative for Stony Brook University's Central Mailing Services as part of the campus-wide Lean Six Sigma program. Started with data analysis and process mapping, then proposed and implemented changes covering route optimization, equipment usage, marketing spend, and a shift to digital record-keeping.</p>
         <div class="outcomes">
           <div class="outcomes-title">Results</div>
-          <div class="o-row"><span class="o-dot"></span>Significant reduction in mailing costs through optimized equipment use and revised marketing spend</div>
-          <div class="o-row"><span class="o-dot"></span>Faster mailing processing time after route and workflow changes</div>
+          <div class="o-row"><span class="o-dot"></span>Identified and resolved core inefficiencies in the mailing division, leading to a 33% reduction in mailing costs</div>
+          <div class="o-row"><span class="o-dot"></span>Faster processing time after route and workflow changes</div>
           <div class="o-row"><span class="o-dot"></span>Full digitization of mailing records, reducing paper waste and improving data accessibility</div>
         </div>
         <div class="skill-row">
-          <span class="stag">Process Mapping</span><span class="stag">Data Analysis</span><span class="stag">Cost Reduction</span><span class="stag">KPIs</span><span class="stag">Digital Records</span>
+          <span class="stag">Lean Six Sigma</span><span class="stag">Process Mapping</span><span class="stag">Data Analysis</span><span class="stag">Cost Reduction</span><span class="stag">KPIs</span>
         </div>
       </div>
     </div>
@@ -672,12 +723,12 @@ main {
         <p>Led a project to reduce manual overhead in academic advising. Interviewed students and advisors to understand pain points, designed a semi-automated scheduling and course planning platform, and built an Excel-based tool that automatically cross-referenced student progress against degree requirements — the part advisors found most tedious.</p>
         <div class="outcomes">
           <div class="outcomes-title">Results</div>
-          <div class="o-row"><span class="o-dot"></span>Meaningful reduction in appointment wait times, improving student access and advisor throughput</div>
-          <div class="o-row"><span class="o-dot"></span>Substantially less manual data entry per advisor through the automated tracking tool</div>
+          <div class="o-row"><span class="o-dot"></span>Reduced advising time per student session from 1 hour down to 15 minutes</div>
+          <div class="o-row"><span class="o-dot"></span>Significantly less manual data entry per advisor through the automated tracking tool</div>
           <div class="o-row"><span class="o-dot"></span>Positive feedback from both students and advisors on the new platform</div>
         </div>
         <div class="skill-row">
-          <span class="stag">Excel Automation</span><span class="stag">Stakeholder Research</span><span class="stag">UX Design</span><span class="stag">Testing &amp; QA</span>
+          <span class="stag">Excel Automation</span><span class="stag">Lean Six Sigma</span><span class="stag">Stakeholder Research</span><span class="stag">Process Design</span><span class="stag">Testing &amp; QA</span>
         </div>
       </div>
     </div>
